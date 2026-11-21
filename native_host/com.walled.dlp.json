@@ -1,0 +1,10 @@
+{
+  "name": "com.walled.dlp",
+  "description": "Walled DLP native messaging host",
+  "path": "d:\\walledai_assign2\\native_host\\run_host.bat",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://admccjkmockfdflocgggjfgdacdodkdf/",
+    "chrome-extension://ndjlgaapnfplllenecfoemenpdgoimik/"
+  ]
+}

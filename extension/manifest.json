@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Walled DLP",
+  "version": "1.0.0",
+  "description": "Data Loss Prevention monitor for ChatGPT and Perplexity. Detects WALLED_SENSITIVE marker and shows native desktop confirmation before submission.",
+
+  "permissions": [
+    "nativeMessaging",
+    "storage"
+  ],
+
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://www.perplexity.ai/*"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/*"],
+      "js": ["lib/pdf.min.js", "common_dlp.js", "content_chatgpt.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.perplexity.ai/*"],
+      "js": ["lib/pdf.min.js", "common_dlp.js", "content_perplexity.js"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "icons": {
+    "16":  "icons/icon16.png",
+    "48":  "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
